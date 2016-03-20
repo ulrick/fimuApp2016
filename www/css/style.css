@@ -1,0 +1,29 @@
+/* Empty. Add your own CSS if you like */
+
+.bar.bar-stable{
+	background : #D09B3F;
+}
+
+.home button.button-positive {
+    /*border-color: transparent;*/
+    /*background-color: #6D09B2;*/
+    /*background-color: #007BFF;*/
+    background-color: #ba6447 !important;
+    color: #fff;
+    color: #90bbb8;
+	opacity: 0.9;
+	font-size:  1.3em;
+	font-weight: bold;
+	letter-spacing: 2px;
+}
+
+.home-bg-image{
+	background : url("../img/visuel_fimu_2016.jpg") no-repeat center center fixed;
+	background-size: 100% 88%;
+}
+
+.platform-android .bar .title {
+    font-size: 19px;
+    line-height: 44px;
+    text-align: center;
+}
