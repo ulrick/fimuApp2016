@@ -1,0 +1,46 @@
+<ion-view title="Fimu 2016">
+
+      <ion-nav-buttons side="left">
+          <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+      </ion-nav-buttons>
+      
+      <div class="bar bar-subheader">
+        <h3 class="center">Samedi</h3>
+      </div>
+
+      <ion-content has-header="true" class="home-bg-image home"> 
+        <ion-list class="home-programs">    
+          <ion-item id="scene{{event.event_sceneId}}" class="item-avatar item-icon-right" ng-repeat="event in events" type="item-text-wrap" href="#/snd/home/{{event.event_id}}">
+            <img class="program image" src="http://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Zachary_Quinto_2011.jpg/200px-Zachary_Quinto_2011.jpg" />
+            <div class="row">
+              <div class="event-info">
+                <h2 class="program nomartiste">{{event.event_artisteId}} Nom artiste</h2>
+                <p class="program description">I'm a psychiatrist at Briarcliff Institute r'grg g 'g tgtrhfjd dj ezfgerg  erg eeg e g dg dhjjfg uj f </p>
+                <p class="program scene">{{event.event_sceneId}} Nom scène</p>
+              </div>
+              <div >
+                <i class="icon ion-ios-time-outline">
+                <span class="program heuredebut">12 : 45</span>
+                <span class="program heurefin">13 : 30</span>
+              </div>
+            </div>
+          </ion-item>
+        </ion-list>
+      </ion-content>
+
+
+      <div class="tabs tabs-icon-only tabs-color-active-positive">
+        <a nav-clear class="tab-item disable-user-behavior active" title="Programmes" icon-on="ion-ios-calendar" icon-off="ion-ios-calendar-outline" nav-clear ui-sref="snd.home">
+          <i class="icon ion-ios-calendar"></i><span class="tab-title ng-binding" ng-bind-html="title"></span>
+        </a>
+
+        <a nav-clear class="tab-item disable-user-behavior" title="Artistes" icon-on="ion-ios-musical-notes" icon-off="ion-ios-musical-note" ui-sref="snd.chat">
+          <i class="icon ion-ios-musical-note"></i><span class="tab-title ng-binding" ng-bind-html="title"></span>
+        </a>
+
+        <a nav-clear class="tab-item disable-user-behavior" title="Plan" icon-on="ion-ios-gear" icon-off="ion-ios-gear-outline" ui-sref="snd.drink">
+          <i class="icon ion-ios-gear-outline"></i><span class="tab-title ng-binding" ng-bind-html="title"></span>
+        </a>
+      </div>
+
+  </ion-view>

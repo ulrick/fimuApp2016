@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+angular.module('fimu.controllers', [])
 
 .controller('ProgramsCtrl', function($scope, $state) {
 	
@@ -31,4 +31,46 @@ angular.module('starter.controllers', [])
   $scope.settings = {
     enableFriends: true
   };
-});
+})
+
+
+
+
+.controller('NavController', function($scope, $ionicSideMenuDelegate) {
+  $scope.toggleLeft = function() {
+	$ionicSideMenuDelegate.toggleLeft();
+  };
+})
+
+
+.controller('EventPageController', function($scope, $rootScope, $stateParams, Event, $ionicSideMenuDelegate) {
+  var query = Event.query();
+  query.$promise.then(function(data) {
+     $scope.events = data;
+  });
+})
+
+.controller('EventDetailCtrl', function($scope, $stateParams, Event) {
+  $scope.event = Event.get($stateParams.id);
+  
+  var query = Event.query();
+  var singleEvent;
+  query.$promise.then(function(data) {
+    angular.forEach(data, function(datum, key){
+      $scope.singleEvent = datum;
+    });
+     $scope.events = data;
+      
+  });
+
+})
+
+
+.controller('SndChatPageController', function($scope, $ionicSideMenuDelegate) {
+})
+.controller('SndChatSinglePageController', function($scope, $ionicSideMenuDelegate) {
+})
+.controller('SndDrinkPageController', function($scope, $ionicSideMenuDelegate) {
+})
+.controller('SndPolicyPageController', function($scope, $ionicSideMenuDelegate) {
+})

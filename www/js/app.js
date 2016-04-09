@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+angular.module('fimu', ['ionic', 'ngResource', 'fimu.controllers', 'fimu.services'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -32,7 +32,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   $stateProvider
 
   // setup an abstract state for the tabs directive
-    .state('tab', {
+  .state('tab', {
     url: '/tab',
     abstract: true,
     templateUrl: 'templates/tabs.html'
@@ -87,9 +87,75 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         controller: 'AccountCtrl'
       }
     }
-  });
+  })
+
+
+	.state('snd', {
+		url : '/snd',
+		templateUrl : 'templates/fimu-abstract.html',
+		abstract : true
+	})
+	.state('snd.home', {
+		url: '/home',
+		views: {
+			'snd': {
+				templateUrl: 'templates/fimu-home.html',
+				controller : 'EventPageController'
+			}
+		}
+	})
+.state('snd.event-detail', {
+      url: '/home/:id',
+      views: {
+        'snd': {
+          templateUrl: 'templates/event-detail.html',
+          controller: 'EventDetailCtrl'
+        }
+      }
+    })
+
+	.state('snd.chat', {
+		url: '/chat',
+		views: {
+			'snd': {
+				templateUrl: 'templates/snd-chat.html',
+				controller : 'SndChatPageController'
+			}
+		}
+	})
+	.state('snd.chat-single', {
+	  url: '/chat-single',
+	  views: {
+		'snd': {
+		  templateUrl: 'templates/snd-chat-single.html',
+		  controller : 'SndChatSinglePageController'
+		}
+	  }
+	})
+	.state('snd.drink', {
+		url: '/drink',
+		views: {
+			'snd': {
+				templateUrl: 'templates/snd-drink.html',
+				controller : 'SndDrinkPageController'
+			}
+		}
+	})
+	.state('snd.policy', {
+		url: '/policy',
+		views: {
+			'snd': {
+				templateUrl: 'templates/snd-policy.html',
+				controller : 'SndPolicyPageController'
+			}
+		}
+	});
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/programs');
 
-});
+})
+
+.constant('apiUrl', 'http://manasse-yawo.com')
+
+;

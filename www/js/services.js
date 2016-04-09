@@ -1,4 +1,4 @@
-angular.module('starter.services', [])
+angular.module('fimu.services', [])
 
 .factory('Chats', function() {
   // Might use a resource here that returns a JSON array
@@ -53,4 +53,26 @@ angular.module('starter.services', [])
       return null;
     }
   };
+})
+
+.factory('Event', function($resource, apiUrl){
+	/*var apiUrl = 'http://manasse-yawo.com';*/
+	//return $resource(apiUrl+'/rest/fimu_event');
+	var data = $resource(apiUrl+'/rest/fimu_event/:event_id', {event_id: '@event_id'}, {
+      	update:{
+          	method:'PUT'
+        }/*,
+
+        getAllEvents : function(){
+        	return this.query();
+        },
+
+        getSingleEvent : function(id){
+
+        }*/
+    });
+     
+    return data;
+
+	
 });
