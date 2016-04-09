@@ -1,0 +1,79 @@
+app:
+    menu:
+        event: "Evènement"
+        artist: "Groupe"
+        scene: "Scène"
+        user: "Utilisateur"
+
+
+scene:
+    form:
+        name: "Nom"
+        latitude: "Latitude"
+        longitude: 'Longitude'
+        adresse: "Adresse"
+        image: "Image"
+
+    show:
+        name: "Nom"
+        latitude: "Latitude"
+        longitude: "Longitude"
+        description: "Description"
+        image: "Image"
+        adresse: "Adresse"
+
+    list:
+        name: "Nom"
+        latitude: "Latitude"
+        longitude: "Longitude"
+        adresse: "Adresse"
+        image: "Image"
+
+    list_title: "Liste des scènes"
+
+event:
+    form:
+        dateStart: "Date de début"
+        dateEnd: "Date de fin"
+        scene: "Scène"
+        artiste: "Artiste"
+
+    list:
+        dateStart: "Date de début"
+        dateEnd: "Date de fin"
+        scene: "Scène"
+        artiste: "Artiste"
+
+    show:
+        dateStart: "Date de début"
+        dateEnd: "Date de fin"
+        scene: "Scène"
+        artiste: "Artiste"
+
+    list_title: "Liste des évènements"
+
+artist:
+    form:
+        name: "Nom"
+        description: "Description"
+        country: "Pays"
+        image: "Image"
+        style: "Style"
+
+    show:
+        name: "Nom"
+        description: "Description"
+        country: "Pays"
+        image: "Image"
+        style: "Style"
+
+    list:
+        name: "Nom"
+        description: "Description"
+        country: "Pays"
+        image: "Image"
+        style: "Style"
+
+    list_title: "Liste des artistes"
+    form_title: "Ajouter un artiste"
+    edit_title: "Editer un artiste"

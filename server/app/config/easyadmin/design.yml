@@ -1,0 +1,11 @@
+easy_admin:
+    design:
+        brand_color: '#f7a313'
+        form_theme: 'vertical'
+        menu:
+            - { entity: Artiste, icon: 'users'}
+            - { entity: Scene, icon: 'map-signs'}
+            - { entity: Event, icon: 'calendar'}
+            - { entity: User, icon: 'user'}
+            - {label: 'API'}
+            - { label: 'API DOC', route: 'nelmio_api_doc_index', target: 'blank' }

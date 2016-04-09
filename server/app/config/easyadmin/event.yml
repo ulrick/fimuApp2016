@@ -1,0 +1,8 @@
+easy_admin:
+    entities:
+        Event:
+            label: app.menu.event
+            class: AppBundle\Entity\Event
+            list:
+                title: "event.list_title"
+                actions: ['show']

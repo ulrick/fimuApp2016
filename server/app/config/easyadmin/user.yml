@@ -1,0 +1,16 @@
+easy_admin:
+    entities:
+        User:
+            class: AppBundle\Entity\User
+            label: app.menu.user
+            list:
+                fields: ['id', 'username', 'email', 'enabled', 'locked' ]
+                actions: ['show']
+            form:
+                fields:
+                    - { property: 'username' }
+                    - { property: 'email', type: 'email' }
+                    - { property: 'plainPassword', type: 'password', label: 'Password', help: 'Passwords must have at least 8 characters' }
+                    - { property: 'roles' }
+                    - { property: 'enabled', type: 'checkbox' }
+                    - { property: 'locked', type: 'checkbox' }

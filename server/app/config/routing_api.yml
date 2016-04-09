@@ -1,0 +1,11 @@
+scene:
+    type: rest
+    resource: "@AppBundle/Controller/Api/SceneController.php"
+
+event:
+    type: rest
+    resource: "@AppBundle/Controller/Api/EventController.php"
+
+artist:
+    type: rest
+    resource: "@AppBundle/Controller/Api/ArtisteController.php"

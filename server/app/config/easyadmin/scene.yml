@@ -1,0 +1,32 @@
+easy_admin:
+    entities:
+        Scene:
+            label: app.menu.scene
+            class: AppBundle\Entity\Scene
+            list:
+                actions: ['show']
+                title: "scene.list_title"
+                fields:
+                    - { property: 'id' }
+                    - { property: 'image', type: 'image',base_path: "%scene_image_uri%", label: 'scene.list.image' }
+                    - { property: 'name', label: 'scene.list.name' }
+                    - { property: 'latitude', label: 'scene.list.latitude' }
+                    - { property: 'longitude', label: 'scene.list.longitude' }
+                    - { property: 'adresse', label: 'scene.list.adresse' }
+
+            show:
+                fields:
+                    - { property: 'id'}
+                    - { property: 'image', type: 'image',base_path: "%scene_image_uri%", label: 'scene.list.image' }
+                    - { property: 'name', label: 'scene.show.name'}
+                    - { property: 'latitude', label: 'scene.show.latitude'}
+                    - { property: 'longitude', label: 'scene.show.longitude'}
+                    - { property: 'adresse', label: 'scene.show.adresse'}
+
+            form:
+                fields:
+                    - { property: 'name', label: 'scene.form.name' }
+                    - { property: 'latitude', label: 'scene.form.latitude' }
+                    - { property: 'longitude', label: 'scene.form.longitude' }
+                    - { property: 'adresse', label: 'scene.form.adresse' }
+                    - { property: 'imageFile', type: 'vich_image', label: 'scene.form.image' }

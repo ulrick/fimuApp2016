@@ -1,0 +1,32 @@
+easy_admin:
+    entities:
+        Artiste:
+            label: app.menu.artist
+            class: AppBundle\Entity\Artiste
+            list:
+                title: "artist.list_title"
+                actions: ['show']
+                fields:
+                    - { property: 'id' }
+                    - { property: 'image', type: 'image',base_path: "%artiste_image_uri%", label: 'artist.list.image' }
+                    - { property: 'name' , label: 'artist.list.name'}
+                    - { property: 'description', label: 'artist.list.description'}
+                    - { property: 'style', label: 'artist.list.style' }
+                    - { property: 'country', label: 'artist.list.country' }
+            show:
+                fields:
+                    - { property: 'image', type: 'image',base_path: "%artiste_image_uri%", label: 'artist.show.image' }
+                    - { property: 'name', label: 'artist.show.name' }
+                    - { property: 'description', label: 'artist.show.description' }
+                    - { property: 'style', label: 'artist.show.style' }
+                    - { property: 'country', label: 'artist.show.country' }
+            form:
+                title: "artist.form_title"
+                fields:
+                    - { property: 'name' , label: 'artist.form.name' }
+                    - { property: 'description', label: 'artist.form.description' }
+                    - { property: 'style', label: 'artist.form.style' }
+                    - { property: 'country', label:  'artist.form.country' }
+                    - { property: 'imageFile', type: 'vich_image', label: 'artist.form.image' }
+            edit:
+                title: "artist.edit_title"
