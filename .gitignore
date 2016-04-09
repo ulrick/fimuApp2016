@@ -1,0 +1,8 @@
+/server/app/config/parameters.yml
+/server/build/
+/server/phpunit.xml
+/server/var/*
+!server/var/SymfonyRequirements.php
+/server/vendor/
+/server/web/bundles
+/server/.idea
