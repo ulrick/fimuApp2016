@@ -26,7 +26,7 @@ class SceneController extends BaseController
     public function getScenesAction()
     {
         $data = $this->getRepository("AppBundle:Scene")->findAll();
-        return array('scenes' => $data);
+        return $data;
     }
 
     /**
@@ -74,6 +74,6 @@ class SceneController extends BaseController
      * )
      */
     public function getSceneEventsAction(Scene $scene){
-        return array('events' => $scene->getEvents());
+        return $scene->getEvents();
     }
 }

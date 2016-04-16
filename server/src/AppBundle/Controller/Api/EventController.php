@@ -28,7 +28,7 @@ class EventController extends BaseController
     public function getEventsAction()
     {
         $events = $this->getRepository('AppBundle:Event')->findAll();
-        return array('events' => $events);
+        return $events;
     }
 
 

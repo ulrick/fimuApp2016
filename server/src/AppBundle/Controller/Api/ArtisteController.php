@@ -30,7 +30,7 @@ class ArtisteController extends BaseController
      */
     public function getArtistsAction(){
         $artists = $this->getRepository("AppBundle:Artiste")->findAll();
-        return array('artists' => $artists);
+        return $artists;
     }
 
     /**
@@ -80,6 +80,6 @@ class ArtisteController extends BaseController
      * )
      */
     public function getArtistEventsAction(Artiste $artiste){
-        return array('events' => $artiste->getEvents());
+        return $artiste->getEvents();
     }
 }
