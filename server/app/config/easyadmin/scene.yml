@@ -10,6 +10,7 @@ easy_admin:
                     - { property: 'id' }
                     - { property: 'image', type: 'image',base_path: "%scene_image_uri%", label: 'scene.list.image' }
                     - { property: 'name', label: 'scene.list.name' }
+                    - { property: 'description', label: 'scene.list.description' }
                     - { property: 'latitude', label: 'scene.list.latitude' }
                     - { property: 'longitude', label: 'scene.list.longitude' }
                     - { property: 'adresse', label: 'scene.list.adresse' }
@@ -19,6 +20,7 @@ easy_admin:
                     - { property: 'id'}
                     - { property: 'image', type: 'image',base_path: "%scene_image_uri%", label: 'scene.list.image' }
                     - { property: 'name', label: 'scene.show.name'}
+                    - { property: 'description', label: 'scene.show.description' }
                     - { property: 'latitude', label: 'scene.show.latitude'}
                     - { property: 'longitude', label: 'scene.show.longitude'}
                     - { property: 'adresse', label: 'scene.show.adresse'}
@@ -26,6 +28,7 @@ easy_admin:
             form:
                 fields:
                     - { property: 'name', label: 'scene.form.name' }
+                    - { property: 'description', label: 'scene.form.description' }
                     - { property: 'latitude', label: 'scene.form.latitude' }
                     - { property: 'longitude', label: 'scene.form.longitude' }
                     - { property: 'adresse', label: 'scene.form.adresse' }

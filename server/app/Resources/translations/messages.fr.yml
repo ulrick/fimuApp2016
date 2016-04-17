@@ -13,6 +13,7 @@ scene:
         longitude: 'Longitude'
         adresse: "Adresse"
         image: "Image"
+        description: "Description"
 
     show:
         name: "Nom"
@@ -27,6 +28,7 @@ scene:
         latitude: "Latitude"
         longitude: "Longitude"
         adresse: "Adresse"
+        description: "Description"
         image: "Image"
 
     list_title: "Liste des scènes"
