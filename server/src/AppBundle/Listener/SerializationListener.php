@@ -21,11 +21,10 @@ use Symfony\Component\HttpFoundation\RequestStack;
  */
 class SerializationListener implements EventSubscriberInterface
 {
-
     /**
-     * @var RequestStack
+     * @var string
      */
-    protected $request;
+    protected $baseUrl;
 
     /**
      * @var \Vich\UploaderBundle\Templating\Helper\UploaderHelper
@@ -45,7 +44,8 @@ class SerializationListener implements EventSubscriberInterface
      */
     public function __construct(ContainerInterface $container)
     {
-        $this->request = $container->get('request_stack')->getCurrentRequest();
+        $request = $container->get('request_stack')->getCurrentRequest();
+        $this->baseUrl = $request->getScheme() . '://' . $request->getHttpHost() . $request->getBasePath();
         $this->imageUrlGenerator = $container->get('vich_uploader.templating.helper.uploader_helper');
     }
 
@@ -67,6 +67,6 @@ class SerializationListener implements EventSubscriberInterface
     {
         $object = $event->getObject();
         if($object instanceof Imageable && $object->getImage() != null && !empty(trim($object->getImage())))
-            $event->getVisitor()->addData('image_url',$this->request->getUriForPath($this->imageUrlGenerator->asset($object,'imageFile')));
+            $event->getVisitor()->addData('image_url', $this->baseUrl.$this->imageUrlGenerator->asset($object,'imageFile'));
     }
 }
