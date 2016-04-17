@@ -40,7 +40,7 @@ class Scene implements Imageable
     /**
      * @var float
      *
-     * @ORM\Column(name="latitude", type="float", nullable=true)
+     * @ORM\Column(name="latitude", type="decimal", scale=7, nullable=true)
      * @Serializer\Expose()
      */
     private $latitude;
@@ -48,7 +48,7 @@ class Scene implements Imageable
     /**
      * @var float
      *
-     * @ORM\Column(name="longitude", type="float", nullable=true)
+     * @ORM\Column(name="longitude", type="decimal", scale=7, nullable=true)
      * @Serializer\Expose()
      */
     private $longitude;
