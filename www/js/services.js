@@ -55,24 +55,54 @@ angular.module('fimu.services', [])
   };
 })
 
-.factory('Event', function($resource, apiUrl){
-	/*var apiUrl = 'http://manasse-yawo.com';*/
-	//return $resource(apiUrl+'/rest/fimu_event');
-	var data = $resource(apiUrl+'/rest/fimu_event/:event_id', {event_id: '@event_id'}, {
+.factory('EventFactory', function($resource, apiUrl){
+	var data = $resource(apiUrl+'/events/:id', {id: '@id'}, {
       	update:{
           	method:'PUT'
-        }/*,
-
-        getAllEvents : function(){
-        	return this.query();
-        },
-
-        getSingleEvent : function(id){
-
-        }*/
+        }
     });
-     
+
+    //var events = data.query();
     return data;
 
-	
-});
+    /*return {
+
+	    allEvents : function() {
+	    	return data;
+	    },
+
+	    singleEvent : function(event_id){
+		    console.log("tet ",data.get(1));
+		    return data.get(event_id);
+	    },
+	    remove: function(event) {
+	      events.splice(events.indexOf(event), 1);
+	    }
+	};*/
+})
+
+
+.factory('SceneFactory', function($resource, apiUrl){
+	var data = $resource(apiUrl+'/scenes/:scene_id', {event_id: '@scene_id'}, {
+      	update:{
+          	method:'PUT'
+        }
+    });
+    return data;
+   /* var scenes = data.query();
+    return {
+	    allScenes : function() {
+	    	return data;
+	    },
+
+	    singleScene : function(event_id){
+		    console.log("tet ",data.get(1));
+	    },
+	    remove: function(event) {
+	      events.splice(events.indexOf(event), 1);
+	    }
+	};*/
+})
+
+
+;

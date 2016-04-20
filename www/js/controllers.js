@@ -1,76 +1,60 @@
 angular.module('fimu.controllers', [])
 
-.controller('ProgramsCtrl', function($scope, $state) {
-	
-	$scope.nowProgramDetails = function(){
-		console.log("je vais au détails");
-		$state.go('tab.programsDetails');
-	}
-})
-
-.controller('ChatsCtrl', function($scope, Chats) {
-  // With the new view caching in Ionic, Controllers are only called
-  // when they are recreated or on app start, instead of every page change.
-  // To listen for when this page is active (for example, to refresh data),
-  // listen for the $ionicView.enter event:
-  //
-  //$scope.$on('$ionicView.enter', function(e) {
-  //});
-
-  $scope.chats = Chats.all();
-  $scope.remove = function(chat) {
-    Chats.remove(chat);
+.controller('NavController', function($scope, $ionicSideMenuDelegate) {
+  $scope.toggleLeft = function() {
+	   $ionicSideMenuDelegate.toggleRight();
   };
 })
 
-.controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
-  $scope.chat = Chats.get($stateParams.chatId);
+.controller('EventPageController', function($scope, $rootScope, $stateParams, EventFactory, $ionicSideMenuDelegate) {
+  var query = EventFactory.query();
+  var eventsPromiseList = [];
+  $scope.events = [];
+  //$scope.thisevent = {};
+  var dateFestivalStart = "2016-05-13";
+  query.$promise.then(function(data) {
+    angular.forEach(data, function(event) {
+      event.day = moment(event.date_start).format('dddd');;
+      event.startTime = moment(event.date_start).format('HH:mm');
+      event.endTime = moment(event.date_end).format('HH:mm');
+      eventsPromiseList.push(event);
+    });
+    $scope.events = data;
+    console.log("controller ", eventsPromiseList);
+  });
+  $rootScope.decompte = moment().countdown(dateFestivalStart).toString();
+  console.log($rootScope.decompte);
 })
 
-.controller('AccountCtrl', function($scope) {
+.controller('EventDetailCtrl', function($scope, $stateParams, EventFactory) {
+  console.log("state param ",$stateParams.id);
+  $scope.event = EventFactory.get({id:$stateParams.id});
+  console.log("single event ",$scope.event);
+  //$scope.event = Event.singleEvent($stateParams.event_id);
+  /*$scope.chat = Chats.get($stateParams.chatId);*/
+})
+
+.controller('SndChatPageController', function($scope, $rootScope, $stateParams, SceneFactory, $ionicSideMenuDelegate) {
+  var query = SceneFactory.query();
+  var scenesPromiseList = [];
+  $scope.scenes = [];
+  query.$promise.then(function(data) {
+    angular.forEach(data, function(scene) {
+      scenesPromiseList.push(scene);
+    });
+    $scope.scenes = data;
+    console.log("controller ", scenesPromiseList);
+  });
+})
+
+.controller('SndChatSinglePageController', function($scope, $ionicSideMenuDelegate) {
+})
+
+.controller('SndDrinkPageController', function($scope, $ionicSideMenuDelegate) {
   $scope.settings = {
     enableFriends: true
   };
 })
 
-
-
-
-.controller('NavController', function($scope, $ionicSideMenuDelegate) {
-  $scope.toggleLeft = function() {
-	$ionicSideMenuDelegate.toggleLeft();
-  };
-})
-
-
-.controller('EventPageController', function($scope, $rootScope, $stateParams, Event, $ionicSideMenuDelegate) {
-  var query = Event.query();
-  query.$promise.then(function(data) {
-     $scope.events = data;
-  });
-})
-
-.controller('EventDetailCtrl', function($scope, $stateParams, Event) {
-  $scope.event = Event.get($stateParams.id);
-  
-  var query = Event.query();
-  var singleEvent;
-  query.$promise.then(function(data) {
-    angular.forEach(data, function(datum, key){
-      $scope.singleEvent = datum;
-    });
-     $scope.events = data;
-      
-  });
-
-})
-
-
-.controller('SndChatPageController', function($scope, $ionicSideMenuDelegate) {
-})
-.controller('SndChatSinglePageController', function($scope, $ionicSideMenuDelegate) {
-})
-.controller('SndDrinkPageController', function($scope, $ionicSideMenuDelegate) {
-})
 .controller('SndPolicyPageController', function($scope, $ionicSideMenuDelegate) {
 })

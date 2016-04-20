@@ -20,6 +20,14 @@ angular.module('fimu', ['ionic', 'ngResource', 'fimu.controllers', 'fimu.service
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
+
+    moment.locale('fr', {
+      week : {
+        dow : 1 // Monday is the first day of the week
+      }
+    });
+
+
   });
 })
 
@@ -31,120 +39,61 @@ angular.module('fimu', ['ionic', 'ngResource', 'fimu.controllers', 'fimu.service
   // Each state's controller can be found in controllers.js
   $stateProvider
 
-  // setup an abstract state for the tabs directive
-  .state('tab', {
-    url: '/tab',
-    abstract: true,
-    templateUrl: 'templates/tabs.html'
-  })
-
-  // Each tab has its own nav history stack:
-
-  .state('tab.programs', {
-    url: '/programs',
-    views: {
-      'tab-programs': {
-        templateUrl: 'templates/tab-home.html',
-        controller: 'ProgramsCtrl'
-      }
-    }
-  })
-  
-  .state('tab.programsDetails', {
-    url: '/programs/details',
-    views: {
-      'tab-programs': {
-        templateUrl: 'templates/tab-programs.html',
-        controller: 'ProgramsCtrl'
-      }
-    }
-  })
-
-  .state('tab.chats', {
-      url: '/chats',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/tab-chats.html',
-          controller: 'ChatsCtrl'
-        }
-      }
-    })
-    .state('tab.chat-detail', {
-      url: '/chats/:chatId',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/chat-detail.html',
-          controller: 'ChatDetailCtrl'
-        }
-      }
-    })
-
-  .state('tab.account', {
-    url: '/account',
-    views: {
-      'tab-account': {
-        templateUrl: 'templates/tab-account.html',
-        controller: 'AccountCtrl'
-      }
-    }
-  })
-
-
-	.state('snd', {
-		url : '/snd',
+	.state('fimu', {
+		url : '/fimu',
 		templateUrl : 'templates/fimu-abstract.html',
 		abstract : true
 	})
-	.state('snd.home', {
+	.state('fimu.home', {
 		url: '/home',
 		views: {
-			'snd': {
+			'fimu': {
 				templateUrl: 'templates/fimu-home.html',
 				controller : 'EventPageController'
 			}
 		}
 	})
-.state('snd.event-detail', {
+  .state('fimu.event-detail', {
       url: '/home/:id',
       views: {
-        'snd': {
+        'fimu': {
           templateUrl: 'templates/event-detail.html',
           controller: 'EventDetailCtrl'
         }
       }
     })
 
-	.state('snd.chat', {
-		url: '/chat',
+	.state('fimu.scene', {
+		url: '/scene',
 		views: {
-			'snd': {
-				templateUrl: 'templates/snd-chat.html',
+			'fimu': {
+				templateUrl: 'templates/fimu-scenes.html',
 				controller : 'SndChatPageController'
 			}
 		}
 	})
-	.state('snd.chat-single', {
+	.state('fimu.chat-single', {
 	  url: '/chat-single',
 	  views: {
-		'snd': {
+		'fimu': {
 		  templateUrl: 'templates/snd-chat-single.html',
 		  controller : 'SndChatSinglePageController'
 		}
 	  }
 	})
-	.state('snd.drink', {
+	.state('fimu.drink', {
 		url: '/drink',
 		views: {
-			'snd': {
-				templateUrl: 'templates/snd-drink.html',
+			'fimu': {
+				templateUrl: 'templates/fimu-setting.html',
 				controller : 'SndDrinkPageController'
 			}
 		}
 	})
-	.state('snd.policy', {
+	.state('fimu.policy', {
 		url: '/policy',
 		views: {
-			'snd': {
+			'fimu': {
 				templateUrl: 'templates/snd-policy.html',
 				controller : 'SndPolicyPageController'
 			}
@@ -152,10 +101,10 @@ angular.module('fimu', ['ionic', 'ngResource', 'fimu.controllers', 'fimu.service
 	});
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/programs');
+  $urlRouterProvider.otherwise('/fimu/home');
 
 })
 
-.constant('apiUrl', 'http://manasse-yawo.com')
+.constant('apiUrl', 'http://fimu.shalomaku.fr/api')
 
 ;
