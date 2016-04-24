@@ -63,6 +63,16 @@ angular.module('fimu', ['ionic', 'ngResource', 'fimu.controllers', 'fimu.service
       }
     })
 
+  .state('fimu.event-agenda', {
+    url: '/agenda',
+    views: {
+      'fimu': {
+        templateUrl: 'templates/fimu-eventAgenda.html',
+        controller : 'EventPageController'
+      }
+    }
+  })
+
 	.state('fimu.scene', {
 		url: '/scene',
 		views: {

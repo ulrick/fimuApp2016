@@ -6,13 +6,17 @@ angular.module('fimu.controllers', [])
   };
 })
 
-.controller('EventPageController', function($scope, $rootScope, $stateParams, EventFactory, $ionicSideMenuDelegate) {
+.controller('EventPageController', function($scope, $rootScope, $stateParams, EventFactory, $ionicSideMenuDelegate, $state) {
   
   var query = EventFactory.query();
   var eventsPromiseList = [];
   $scope.events = []; 
   var dateFestivalStart = "2016-05-13"; //Date de début du festival
   $scope.todayDay = moment(new Date()).format('dddd');//Affiche Le jour d'aujourd'hui en lettre "lundi"
+  $scope.isVisibleRemaningTime = false;
+
+
+  console.log("est visible ", $scope.isVisibleRemaningTime);
 
   query.$promise.then(function(data) {
     angular.forEach(data, function(event) {
@@ -21,6 +25,12 @@ angular.module('fimu.controllers', [])
       event.endTime = moment(event.date_end).format('HH:mm');
       eventsPromiseList.push(event);
     });
+
+    if(moment(new Date()) <= moment(dateFestivalStart) ){
+      $scope.isVisibleRemaningTime = true;
+    }
+    
+
     $scope.events = data;
     console.log("controller ", eventsPromiseList);
 
@@ -33,7 +43,6 @@ angular.module('fimu.controllers', [])
       }).value();
       $scope.events = currentEvent;
       console.log("Actuellement ", currentEvent);
-      //$scope.$apply();
   });
  
   
@@ -58,6 +67,10 @@ angular.module('fimu.controllers', [])
     1000
   );
   /*Fin nombre de jour restant*/
+
+  $scope.calendarAgendaFormat = function(){
+    $state.go('fimu.event-agenda');
+  }
 
 })
 
