@@ -6,12 +6,22 @@ angular.module('fimu.controllers', [])
   };
 })
 
-.controller('EventPageController', function($scope, $rootScope, $stateParams, EventFactory, $ionicSideMenuDelegate, $state) {
+.controller('EventPageController', function($scope, $rootScope, $stateParams, EventFactory, $ionicSideMenuDelegate, $state, FestivalDateStart) {
   
   var query = EventFactory.query();
+  /*$scope.keys = [];
+  $scope.cache = $cacheFactory('cacheId');
+  $scope.put = function(key, value) {
+    if (angular.isUndefined($scope.cache.get(key))) {
+      $scope.keys.push(key);
+    }
+    $scope.cache.put(key, angular.isUndefined(value) ? null : value);
+  };
+  console.log("cache 2", $scope.cache)*/
+  
   var eventsPromiseList = [];
   $scope.events = []; 
-  var dateFestivalStart = "2016-05-13"; //Date de début du festival
+  var dateFestivalStart = FestivalDateStart; //Date de début du festival
   $scope.todayDay = moment(new Date()).format('dddd');//Affiche Le jour d'aujourd'hui en lettre "lundi"
   $scope.isVisibleRemaningTime = false;
 

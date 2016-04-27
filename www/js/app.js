@@ -116,5 +116,6 @@ angular.module('fimu', ['ionic', 'ngResource', 'fimu.controllers', 'fimu.service
 })
 
 .constant('apiUrl', 'http://fimu.shalomaku.fr/api')
+.constant('FestivalDateStart', '2016-05-13')
 
 ;
