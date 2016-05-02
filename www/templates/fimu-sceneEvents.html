@@ -1,0 +1,29 @@
+<ion-view title="{{scene.name}}">
+
+      <ion-nav-buttons side="right">
+          <button menu-toggle="right" class="button button-icon icon ion-navicon"></button>
+      </ion-nav-buttons>
+
+      <ion-content has-header="false">
+        
+        <ion-list class="home-programs">
+          <ion-item id="scene{{event.event_sceneId}}" class="item-avatar item-icon-right" ng-repeat="sceneEvent in sceneEvents" type="item-text-wrap" href="#">
+            <img class="program image" ng-src="{{sceneEvent.artiste.image_url}}" />
+            <div class="row">
+              <div class="event-info">
+                <h2 class="program nomartiste">{{sceneEvent.artiste.name}}</h2>
+                <p class="program description">{{sceneEvent.artiste.description}}</p>
+                <p class="program scene">{{sceneEvent.scene.name}}</p>
+              </div>
+              <div >
+                <i class="icon"> -
+                  <span class="program heuredebut">{{sceneEvent.startTime}}</span>
+                  <span class="program heurefin">{{sceneEvent.endTime}}</span>
+                </i>
+              </div>
+            </div>
+          </ion-item>
+        </ion-list>
+      </ion-content>
+
+  </ion-view>

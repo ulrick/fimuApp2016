@@ -1,0 +1,72 @@
+<ion-view title = '<img class="title-image" src="img/logo_fimu2016.jpg" />' >
+   
+    <!--ion-nav-buttons side="right">
+        <button menu-toggle="right" class="button button-icon icon ion-navicon"></button>
+    </ion-nav-buttons>-->
+    
+    <ion-content has-header="false" class="accueil-content">
+        
+        <button class="button button-outline button-positive" ng-click="stopVideo()">Pause</button>
+        <button class="button button-outline button-positive" ng-click="playVideo()">Play</button>
+       
+        <video autoplay muted
+            id="fimuVideo"
+            ng-src="{{clipSrc}}"
+            poster="{{myPreviewImageSrc}}"
+            type="video/webm" >
+        </video>
+        
+        <div class="fimu-description">
+            <h3>Concerts en cours</h3>
+            
+            <div class="row center" id="clockdiv" ng-show="isVisibleRemaningTime">
+                <div class="col col-25">
+                <span class="days">{{duration.days}}</span>
+                <div class="smalltext">Jours</div>
+                </div>
+                <div class="col col-25">
+                <span class="hours">{{duration.hours}}</span>
+                <div class="smalltext">Heures</div>
+                </div>
+                <div class="col col-25">
+                <span class="minutes">{{duration.minutes}}</span>
+                <div class="smalltext">Min</div>
+                </div>
+                <div class="col col-25">
+                <span class="seconds">{{duration.seconds}}</span>
+                <div class="smalltext">Sec</div>
+                </div>
+            </div>
+            
+            <!--<ion-list class="accueil-programs">
+                <ion-item id="scene{{event.scene.id}}" class="item item-thumbnail-left" ng-repeat="event in events" type="item-text-wrap" href="#/fimu/home/{{event.id}}">
+                    <img class="program image" ng-src="{{event.artiste.image_url}}" />
+                    <div class="row">
+                        <div class="event-info">
+                            <h2 class="program nomartiste">{{event.artiste.name}}</h2>
+                            <p class="program description">{{event.artiste.style}}</p>
+                            <p class="program scene">{{event.scene.name}}</p>
+                        </div>
+                    </div>
+                </ion-item>
+            </ion-list>-->
+            
+            <ion-slide-box class="accueil-programs" slide-interval="4000" does-continue="true" auto-play="true">
+                <ion-slide id="scene{{event.scene.id}}" class="item item-thumbnail-left" ng-repeat="event in events" type="item-text-wrap" href="#/fimu/home/{{event.id}}">
+                   <img class="program image" ng-src="{{event.artiste.image_url}}" />
+                    <div class="row">
+                        <div class="event-info">
+                            <h2 class="program nomartiste">{{event.artiste.name}}</h2>
+                            <p class="program description">{{event.artiste.style}}</p>
+                            <p class="program scene">{{event.scene.name}}</p>
+                        </div>
+                    </div>
+                </ion-slide>
+            </ion-slide-box>
+            
+        </div>
+        
+    </ion-content>
+    
+</ion-view>
+

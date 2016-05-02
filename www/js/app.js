@@ -5,28 +5,36 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('fimu', ['ionic', 'ngResource', 'fimu.controllers', 'fimu.services'])
+angular.module('fimu', ['ionic', 'ngResource', 'notifications', 'fimu.controllers', 'fimu.services', 'fimu.factory'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform, $rootScope, EventFactory) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
     if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
       cordova.plugins.Keyboard.disableScroll(true);
-
     }
     if (window.StatusBar) {
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
+		
+		
+		if(true){//faire ceci si internet est detecté
+			$rootScope.allEvents = EventFactory.query();
+			//console.log("Tous les events ", $rootScope.allEvents);
+		}
+		else{
+			//Todo il n'y a pas internet
+		}
+		
 
     moment.locale('fr', {
       week : {
         dow : 1 // Monday is the first day of the week
       }
     });
-
 
   });
 })
@@ -91,6 +99,15 @@ angular.module('fimu', ['ionic', 'ngResource', 'fimu.controllers', 'fimu.service
 		}
 	  }
 	})
+	.state('fimu.sceneEvents', {
+	  url: '/scene/:id/events',
+	  views: {
+		'fimu': {
+		  templateUrl: 'templates/fimu-sceneEvents.html',
+		  controller : 'SceneEventsController'
+		}
+	  }
+	})
 	.state('fimu.drink', {
 		url: '/drink',
 		views: {
@@ -108,10 +125,20 @@ angular.module('fimu', ['ionic', 'ngResource', 'fimu.controllers', 'fimu.service
 				controller : 'SndPolicyPageController'
 			}
 		}
-	});
+	})
+	.state('fimu.accueil', {
+		url: '/accueil',
+		views: {
+			'fimu': {
+				templateUrl: 'templates/accueil.html',
+				controller : 'AccueilPageController'
+			}
+		}
+	})
+	;
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/fimu/home');
+  $urlRouterProvider.otherwise('/fimu/accueil');
 
 })
 

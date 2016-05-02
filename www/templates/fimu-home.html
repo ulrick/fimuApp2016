@@ -33,7 +33,7 @@
         </div>
         
         <ion-list class="home-programs">
-          <ion-item id="scene{{event.event_sceneId}}" class="item-avatar item-icon-right" ng-repeat="event in events" type="item-text-wrap" href="#/fimu/home/{{event.id}}">
+          <ion-item id="scene{{event.scene.id}}" class="item-avatar item-icon-right" ng-repeat="event in events" type="item-text-wrap" href="#/fimu/home/{{event.id}}">
             <img class="program image" ng-src="{{event.artiste.image_url}}" />
             <div class="row">
               <div class="event-info">

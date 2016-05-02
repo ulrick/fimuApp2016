@@ -42,4 +42,24 @@ angular.module('fimu.services', [])
 })
 
 
+.factory('SceneEventsFactory', function($resource, $cacheFactory, apiUrl, $stateParams){
+	var SceneEventsFactoryCache = $cacheFactory('SceneEventsFactory');
+	var data = $resource(apiUrl+'/scenes/'+$stateParams.id+'/events', {id: '@id'}, {
+      	update:{
+          	method:'PUT'
+        },
+				get: { 
+					method:'GET', 
+					cache: SceneEventsFactoryCache
+				},
+				query:{
+					method : 'GET', 
+					cache: SceneEventsFactoryCache,
+					isArray:true
+				}
+    });
+    return data;
+})
+
+
 ;
