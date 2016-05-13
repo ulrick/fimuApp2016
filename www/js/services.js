@@ -61,47 +61,17 @@ angular.module('fimu.services', [])
           	method:'PUT'
         }
     });
-
-    //var events = data.query();
     return data;
-
-    /*return {
-
-	    allEvents : function() {
-	    	return data;
-	    },
-
-	    singleEvent : function(event_id){
-		    console.log("tet ",data.get(1));
-		    return data.get(event_id);
-	    },
-	    remove: function(event) {
-	      events.splice(events.indexOf(event), 1);
-	    }
-	};*/
 })
 
 
 .factory('SceneFactory', function($resource, apiUrl){
-	var data = $resource(apiUrl+'/scenes/:scene_id', {event_id: '@scene_id'}, {
+	var data = $resource(apiUrl+'/scenes/:id', {id: '@id'}, {
       	update:{
           	method:'PUT'
         }
     });
     return data;
-   /* var scenes = data.query();
-    return {
-	    allScenes : function() {
-	    	return data;
-	    },
-
-	    singleScene : function(event_id){
-		    console.log("tet ",data.get(1));
-	    },
-	    remove: function(event) {
-	      events.splice(events.indexOf(event), 1);
-	    }
-	};*/
 })
 
 

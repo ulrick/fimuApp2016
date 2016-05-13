@@ -1,4 +1,4 @@
- <ion-view title="Snd - Drink list">
+ <ion-view title="Plan">
 
       <ion-nav-buttons side="right">
         <button menu-toggle="right" class="button button-icon icon ion-navicon"></button>
@@ -6,14 +6,9 @@
 
       <ion-content has-header="true" padding="true">
 
-        <h3>Paramètres</h3>
+        <h3>Map</h3>
         <ion-list>
-          <ion-toggle  ng-model="settings.enableFriends">
-            Activer spootify
-          </ion-toggle>
-          <ion-toggle>
-            Activer Youtube
-          </ion-toggle>
+          
         </ion-list>
       </ion-content>
 
@@ -27,7 +22,7 @@
           <i class="icon ion-ios-musical-note"></i><span class="tab-title ng-binding" ng-bind-html="title"></span>
         </a>
 
-        <a nav-clear class="tab-item disable-user-behavior" title="Plan" icon-on="ion-ios-gear" icon-off="ion-ios-gear-outline" ui-sref="fimu.drink">
-          <i class="icon ion-ios-gear"></i><span class="tab-title ng-binding" ng-bind-html="title"></span>
+        <a nav-clear class="tab-item disable-user-behavior" title="Plan" icon-on="ion-ios-location" icon-off="ion-ios-location-outline" ui-sref="fimu.drink">
+          <i class="icon ion-ios-location"></i><span class="tab-title ng-binding" ng-bind-html="title"></span>
         </a>
       </div>

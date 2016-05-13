@@ -58,7 +58,7 @@ angular.module('fimu', ['ionic', 'ngResource', 'fimu.controllers', 'fimu.service
       views: {
         'fimu': {
           templateUrl: 'templates/event-detail.html',
-          controller: 'EventDetailCtrl'
+          controller: 'EventDetailController'
         }
       }
     })
@@ -68,16 +68,16 @@ angular.module('fimu', ['ionic', 'ngResource', 'fimu.controllers', 'fimu.service
 		views: {
 			'fimu': {
 				templateUrl: 'templates/fimu-scenes.html',
-				controller : 'SndChatPageController'
+				controller : 'ScenePageController'
 			}
 		}
 	})
-	.state('fimu.chat-single', {
-	  url: '/chat-single',
+	.state('fimu.scene-detail', {
+	  url: '/scene/:id',
 	  views: {
 		'fimu': {
-		  templateUrl: 'templates/snd-chat-single.html',
-		  controller : 'SndChatSinglePageController'
+		  templateUrl: 'templates/scene-detail.html',
+		  controller : 'SceneDetailController'
 		}
 	  }
 	})

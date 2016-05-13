@@ -5,13 +5,31 @@
       </ion-nav-buttons>
       
       <div class="bar bar-subheader">
-        <h3 class="center">Samedi</h3>
+        <h3 class="center">{{todayDay}}</h3>
+
+        <div id="clockdiv" ng-hide="events.length">
+            <div>
+              <span class="days">{{duration.days}}</span>
+              <div class="smalltext">Jours</div>
+            </div>
+            <div>
+              <span class="hours">{{duration.hours}}</span>
+              <div class="smalltext">Heures</div>
+            </div>
+            <div>
+              <span class="minutes">{{duration.minutes}}</span>
+              <div class="smalltext">Minutes</div>
+            </div>
+            <div>
+              <span class="seconds">{{duration.seconds}}</span>
+              <div class="smalltext">Secondes</div>
+            </div>
+        </div>
       </div>
 
       <ion-content has-header="true" class="home-bg-image home">
-        <div>
-          <h3 class="center">{{decompte}}</h3>
-        </div>
+        
+
         <ion-list class="home-programs">
           <ion-item id="scene{{event.event_sceneId}}" class="item-avatar item-icon-right" ng-repeat="event in events" type="item-text-wrap" href="#/fimu/home/{{event.id}}">
             <img class="program image" ng-src="{{event.artiste.image_url}}" />
@@ -41,8 +59,8 @@
           <i class="icon ion-ios-musical-note"></i><span class="tab-title ng-binding" ng-bind-html="title"></span>
         </a>
 
-        <a nav-clear class="tab-item disable-user-behavior" title="Plan" icon-on="ion-ios-gear" icon-off="ion-ios-gear-outline" ui-sref="fimu.drink">
-          <i class="icon ion-ios-gear-outline"></i><span class="tab-title ng-binding" ng-bind-html="title"></span>
+        <a nav-clear class="tab-item disable-user-behavior" title="Plan" icon-on="ion-ios-location" icon-off="ion-ios-location-outline" ui-sref="fimu.drink">
+          <i class="icon ion-ios-location-outline"></i><span class="tab-title ng-binding" ng-bind-html="title"></span>
         </a>
       </div>
 

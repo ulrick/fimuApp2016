@@ -1,16 +1,14 @@
  <ion-view title="Scènes">
 
       <ion-nav-buttons side="right">
-
         <button menu-toggle="right" class="button button-icon icon ion-navicon"></button>
-
       </ion-nav-buttons>
 
       <ion-content has-header="true" padding="true">
 
         <h3 class="align-center">Les Scènes</h3>
         <div class="list" type="item-text-wrap">
-            <a class="item item-thumbnail-left" ng-repeat="scene in scenes" href="#/fimu/chat-single">
+            <a class="item item-thumbnail-left" ng-repeat="scene in scenes" href="#/fimu/scene/{{scene.id}}">
               <img ng-src="{{scene.image_url}}" />
               <h2>{{scene.name}}</h2>
               <p>{{scene.description}}</p>
@@ -28,8 +26,8 @@
           <i class="icon ion-ios-musical-notes"></i><span class="tab-title ng-binding" ng-bind-html="title"></span>
         </a>
 
-        <a nav-clear class="tab-item disable-user-behavior" title="Plan" icon-on="ion-ios-gear" icon-off="ion-ios-gear-outline" ui-sref="fimu.drink">
-          <i class="icon ion-ios-gear-outline"></i><span class="tab-title ng-binding" ng-bind-html="title"></span>
+        <a nav-clear class="tab-item disable-user-behavior" title="Plan" icon-on="ion-ios-location" icon-off="ion-ios-location-outline" ui-sref="fimu.drink">
+          <i class="icon ion-ios-location-outline"></i><span class="tab-title ng-binding" ng-bind-html="title"></span>
         </a>
       </div>
     </ion-view>
