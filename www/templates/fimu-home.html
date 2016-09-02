@@ -6,11 +6,14 @@
       
       <div class="bar bar-subheader item-icon-right">
         <h3 class="center">{{todayDay}}</h3>
-        <i class="icon ion-android-apps" ng-click="calendarAgendaFormat()"></i>
+        <!--<i class="icon ion-android-apps" ng-click="calendarAgendaFormat()"></i>-->
       </div>
 
       <ion-content has-header="true" class="home-bg-image home">
-
+        <ion-refresher
+           pulling-text="Pull to refresh..."
+           on-refresh="doRefresh()">
+        </ion-refresher>
         <div class="row center" id="clockdiv" ng-show="isVisibleRemaningTime">
             
             <div class="col col-25">
@@ -33,16 +36,17 @@
         </div>
         
         <ion-list class="home-programs">
-          <ion-item id="scene{{event.scene.id}}" class="item-avatar item-icon-right" ng-repeat="event in events" type="item-text-wrap" href="#/fimu/home/{{event.id}}">
+          <ion-item ng-hide="isVisibleRemaningTime" id="style{{event.style}}" class="item-avatar item-icon-right" ng-repeat="event in events" type="item-text-wrap" href="#/fimu/home/{{event.id}}">
             <img class="program image" ng-src="{{event.artiste.image_url}}" />
+            <div id="" class="style-back">{{event.style}}</div>
             <div class="row">
               <div class="event-info">
                 <h2 class="program nomartiste">{{event.artiste.name}}</h2>
-                <p class="program description">{{event.artiste.description}}</p>
+                <p class="program pays">{{event.artiste.country}}</p>
                 <p class="program scene">{{event.scene.name}}</p>
               </div>
-              <div >
-                <i class="icon"> -
+              <div class="program heureHome">
+                <i class="icon icon-heure"> -
                   <span class="program heuredebut">{{event.startTime}}</span>
                   <span class="program heurefin">{{event.endTime}}</span>
                 </i>

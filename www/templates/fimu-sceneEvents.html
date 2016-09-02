@@ -4,15 +4,16 @@
           <button menu-toggle="right" class="button button-icon icon ion-navicon"></button>
       </ion-nav-buttons>
 
-      <ion-content has-header="false">
+      <ion-content class="bg-image" has-header="false">
         
         <ion-list class="home-programs">
-          <ion-item id="scene{{event.event_sceneId}}" class="item-avatar item-icon-right" ng-repeat="sceneEvent in sceneEvents" type="item-text-wrap" href="#">
+          <ion-item id="style{{sceneEvent.style}}" class="item-avatar item-icon-right" ng-repeat="sceneEvent in sceneEvents" type="item-text-wrap" href="#">
             <img class="program image" ng-src="{{sceneEvent.artiste.image_url}}" />
+            <div id="" class="style-back">{{sceneEvent.style}}</div>
             <div class="row">
               <div class="event-info">
                 <h2 class="program nomartiste">{{sceneEvent.artiste.name}}</h2>
-                <p class="program description">{{sceneEvent.artiste.description}}</p>
+                <p class="program pays">{{sceneEvent.artiste.country}}</p>
                 <p class="program scene">{{sceneEvent.scene.name}}</p>
               </div>
               <div >

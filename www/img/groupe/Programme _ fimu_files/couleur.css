@@ -1,0 +1,203 @@
+
+
+/* Ici sont présents l'ensemble des styles css et éléments graphiques concernant la couleur du site */
+
+
+/* ==================================================================== */
+/* ============= Couleur du logo du FIMU en deux versions ============= */
+/* ==================================================================== */
+
+/* Actuellement : couleur JAUNE */
+/* Plus d'informations dans le manuel d'administration */
+
+.header-secondaire .fimu-logo{
+    background-image: url('../images/logo-fimu2.svg');              /* Ici, il faut modifier la couleur de ce fichier svg qui se trouve dans le répertoire images */
+}
+
+.fimu-logo{
+    background-image: url("../images/logo-fimu1.svg");              /* idem, fichier svg */
+}
+
+@media (max-width: 960px){
+    .fimu-logo{
+        background-image: url("../images/logo-fimu2.svg");              /* idem, fichier svg */
+    }
+}
+
+
+
+
+/* ===================================================================== */
+/* ============= Couleur des éléments dont l'opacité varie ============= */
+/* ===================================================================== */
+
+/* Actuellement : couleur JAUNE */
+
+
+.home-video > h3,
+.bloc-chapo {
+    background-color: rgba(255,228,34,0.9);           /* ici, il faut indiquer le code RVB de cette manière et sans modifier 0.9 : (R,V,B,0.9) */
+}
+
+.AC_texteonimg, 
+.V_intro > .F_contenu > div {
+    background-color: rgba(208,155,63,0.85);          /* idem, code RVB */
+}
+
+.AC_texteonimg{
+    color: #FFFFFF;
+}
+
+.AC_texteonimg h3{
+    color: #FFFFFF;
+}
+
+@media screen and (max-width: 980px) and (min-width: 480px) {
+    .AC_texteonimg {
+            background-color: rgba(255,228,34,0.85);          /* idem, code RVB */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .AC_texteonimg {
+        background-color: rgba(255,228,34,0.85);            /* idem, code RVB */
+    }
+}
+
+
+
+
+
+        /* Pour modifier la couleur, il suffit de remplacer 
+                 les codes hexadécimaux de cette page par celui de la couleur choisie */
+
+
+
+/* ===================================================================== */
+/* ============= Couleur des sous-menus et des formulaires ============= */
+/* ===================================================================== */
+
+/* Actuellement : couleur BLEUE */
+/* Si le contraste avec la couleur dominante le permet, mettre ces éléments en blanc */
+
+
+#G_sous-menu > ul > li > a,
+div.F_sousmenu a:link,
+div.F_sousmenu a:visited,
+div.F_sousmenu a:hover,
+div.F_sousmenu a:active,
+div.F_sousmenu a:focus,
+div.F_sousmenu a,
+div.pratique_sousmenu a:link,
+div.pratique_sousmenu a:visited,
+div.pratique_sousmenu a:hover,
+div.pratique_sousmenu a:active,
+div.pratique_sousmenu a:focus,
+div.pratique_sousmenu a,
+.B_navigation > ul > li > a,
+.B_titres > h3,
+#info-dernieres, 
+.home-video > h3, 
+.bloc-chapo > h2 {
+    color: #FFFFFF !important;
+}
+
+
+
+
+/* ===================================================== */
+/* ============= Couleur dominante du site ============= */
+/* ===================================================== */
+
+/* Actuellement : couleur JAUNE */
+
+
+
+h1, 
+h2,
+a:hover, a:focus, a:active,
+.liste_puce li:before,
+header > .menu > ul > .current_page_item > a,
+a.lienactif,
+.box > h3,
+ul.AG_evenements h3,
+.G_groupe .G_nompays,
+#AC_content > article > h2,
+.copyright > p > a,
+#validation > input {
+    color: #c5872e;
+}
+
+
+header > .menu > ul > li > a:after,
+.liens-footer,
+#contener4,
+.text-instru,
+div.F_sousmenu, 
+div.pratique_sousmenu,
+#G_sous-menu,
+.G_content .rectangle1,
+.G_content .rectangle2,
+div.pratique_sousmenu, 
+div.G_sous-menu,
+#AC_sous-menu,
+.B_navigation,
+.B_titres > h3,
+#info-dernieres,
+.P_presse {
+    background-color: #D09B3F;
+}
+
+
+.poste > div{
+    border-bottom: 1px dashed #FFE422;
+}
+
+
+#A_triangle1,
+#A_triangle2,
+.B_semitriancle {
+    border-color: #D09B3F transparent transparent transparent;
+}
+
+
+.trait-benevole{
+    border-top: 1px solid #FFE422;
+}
+
+
+.B_textearea,
+.M_textearea {
+    border: 2px solid #D09B3F;
+}
+
+.checkboxes-dispo .wpcf7-list-item-label:before,
+#validation > input {
+    border: 1px solid #D09B3F;
+}
+
+#boxe-infodiplome,
+#box-infoprogramme,
+.boxe-infotechnique {
+    border-left: 1px solid #D09B3F;
+}
+
+
+@media screen and (max-width: 753px) and (min-width: 480px ) {
+    .G_filtres > ul > li > a {
+            color: #FFE422;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .G_content > h2 {
+        background-color: #FFE422;
+    }
+}
+
+
+@media screen and (max-width: 960px) {
+    .S_en_savoir_plus {
+        background-color: #FFE422;
+    }
+}

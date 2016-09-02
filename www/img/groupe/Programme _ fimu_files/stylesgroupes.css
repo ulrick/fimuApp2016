@@ -1,0 +1,733 @@
+
+/* STYLES GENERAUX */
+
+
+
+.G_content > img {
+    width: 100%;
+    height: auto;
+
+
+}
+
+.G_sous-menu a, .G_filtres a,.A_sous-menu a, .A_filtres a {
+    color: #000000;
+    text-decoration: none;
+    display: inline-block;
+    padding: 15px 24px;
+    position: relative;
+
+}
+
+
+
+/*------SOUS-MENU------*/
+
+
+
+
+#G_sous-menu {
+    font-family: 'latolight';
+    font-size: 1.5rem;
+    font-weight: normal;
+    font-style: normal;
+    padding-top: 1px;
+    position: relative;
+
+
+}
+
+
+
+.triangle-actif2:after{
+    width: 0;
+    content: "";
+    height: 0;
+    border-style: solid;
+    border-width: 0 15px 15px 15px;
+    border-color: transparent transparent #ffffff transparent;
+    position: relative;
+    top: 20px;
+    right: 60px;
+    margin-right: -60px;
+}
+
+@media (max-width: 960px){
+    .triangle-actif2:after{
+        display: none;
+    }
+
+    }
+
+
+.G_taillelien {
+    margin-left: -15%;
+
+}
+
+
+
+div#G_sous-menu > ul {
+    margin-left: auto;
+    margin-right: auto;
+    list-style: none;
+    text-align: center;
+    padding: 0;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+
+#G_sous-menu >ul > li {
+    display: inline-block;
+    margin: 0;
+    position: relative;
+    font-size: 1.5rem;
+    padding: 30px 40px;
+    text-align: left;
+}
+
+
+#G_sous-menu > ul > li > a {
+    margin: 0;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    text-transform: uppercase;
+}
+
+/*-----------sous-menu-filtres-----*/
+
+.G_filtres, .A_filtres {
+    font-family: 'latolight';
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.G_filtres > ul,.A_filtres > ul{
+
+    margin-left: auto;
+    margin-right: auto;
+    list-style: none;
+    display: table;
+    text-align: center;
+    padding: 0;
+}
+
+
+.G_filtres > ul > li > a, .A_filtres > ul > li > a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 15px;
+    position: relative;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+}
+
+.G_genre > ul > li > a, .A_genre > ul > li > a {
+    font-size: 0.7em;
+}
+
+/*---- filtre-genres----*/
+.G_filtres > ul > li, .A_filtres > ul > li {
+    padding-right: 0;
+    display: table-cell ;
+    margin:0;
+
+}
+
+@media screen and (max-width: 960px) {
+    .G_filtres > ul > li, .A_filtres > ul > li {
+        display: block ;
+    }
+}
+
+
+
+
+
+/*Partie galerie-photos-groupes*/
+
+
+
+
+.G_groupe {
+    display: inline-block;
+    width: 33.2%;
+    overflow: hidden;
+    cursor: pointer;
+    vertical-align: top;
+
+}
+
+
+.G_content {
+    width: 100%;
+    overflow: hidden;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    /* margin-right: 12px; */
+    /* margin-bottom: 50px; */
+    -moz-transition: all .6s;
+    -webkit-transition: all .6s;
+    -o-transition: all .6s;
+    transition: all .6s;
+    margin-bottom:-8px ;
+
+
+}
+
+
+
+.G_groupe.G_description, .G_description1,.G_description3, .G_description4, .G_description6,  .G_description7 {
+    margin: 0;
+    display: inline-block;
+}
+
+.G_description2, .G_description5,.G_description8 {
+    margin:0;
+    display: block;
+}
+
+
+
+.G_groupe > article {
+    text-align: justify;
+    margin: 2em;
+
+}
+
+.G_groupe> article > h3{
+    font-family: "latobold";
+    font-style: normal;
+    font-size: 2.8rem;
+    font-weight: normal;
+    margin:0;
+
+}
+
+.G_groupe > article > p {
+    font-family: "latolight";
+    font-style: normal;
+    font-size: 1.7rem;
+    font-weight: normal;
+}
+
+
+
+
+.G_groupe .G_nompays {
+    font-family: "latoitalic";
+    font-weight: normal;
+    font-style: normal;
+    font-size: 2rem;
+    margin: 2.2% 12px 5% 0px;
+}
+
+
+/*-------------Les rectangles en hover-------*/
+
+
+
+/* position des retangles et quand nous ne sommes pas en hover */
+.G_content .rectangle1 {
+  /*  background: url("../Image/rectanglehover/rect1.jpg");*/
+    width: 148%;
+    height: 50%;
+
+    position: absolute;
+    /* décalage des deux rectangles*/
+    top: -400px;
+    -moz-transition: all .6s;
+    -webkit-transition: all .6s;
+    -o-transition: all .6s;
+    transition: all .6s;
+}
+
+
+
+.G_content .rectangle2 {
+   /* background: url("../Image/rectanglehover/rect1.jpg");*/
+    width: 148%;
+    height: 50%;
+    position: absolute;
+    bottom: -400px;
+    -moz-transition: all .6s;
+    -webkit-transition: all .6s;
+    -o-transition: all .6s;
+    transition: all .6s;
+}
+
+
+
+/* position des rectangles en hover*/
+.G_content:hover .rectangle1 {
+    top:0;
+
+}
+
+
+ .G_content:hover .rectangle2 {
+    bottom:0;
+
+}
+
+.G_content > h2 {
+    color: #ffffff;
+    font-family: "museo700";
+    font-weight: normal;
+    font-style: normal;
+    font-size: 4.9rem;
+    line-height: 4.5rem;
+    position: absolute;
+    text-align: center;
+    -moz-transition: all .6s;
+    -webkit-transition: all .6s;
+    -o-transition: all .6s;
+    transition: all .6s;
+    width: 70%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: -1300px;
+    display: table;
+    margin: auto;
+   /* border-bottom: solid 0.1em #ffffff;
+    padding-bottom: 4%;*/
+
+
+}
+
+
+
+
+.G_content:hover > h2 {
+    /*right: 14%;*/
+    z-index: 10;
+    color: #ffffff;
+    right: 0;
+}
+
+
+
+
+
+
+/*--------------triangle en hover --------------------*/
+
+
+
+
+
+a.G_triangle1{
+    height: 106%;
+}
+
+
+#G_sous_menu li.G_triangle1 {
+    position: absolute;
+    bottom: -30%;
+    right: 57%;
+    width: 0;
+    height: 0;
+    border-bottom: 0.9em solid #ffffff;
+    border-right: 0.8em solid transparent;
+    border-left: 0.8em solid transparent;
+
+
+
+}
+
+/*----------- Partie RESPONSIVE---------------------- */
+
+
+
+
+
+@media screen and (max-width: 1281px) and (min-width: 961px)  {
+
+    /*---- titre du groupe au survol---------*/
+
+    .G_content > h2 {
+        color: #ffffff;
+        font-family: "museo700";
+        font-weight: normal;
+        font-style: normal;
+        font-size: 3rem;
+        position: absolute;
+        top: 30%;
+        right: -100%;
+        text-align: center;
+        -moz-transition: all .6s;
+        -webkit-transition: all .6s;
+        -o-transition: all .6s;
+        transition: all .6s;
+        width: 70%;
+        /* border-bottom: solid 0.1em #ffffff;
+         padding-bottom: 4%;*/
+
+
+    }
+
+
+    .G_content:hover > h2 {
+        right: 14%;
+        z-index: 10;
+        color: #ffffff;
+
+    }
+
+
+    /*----------------description des groupes ----------*/
+    .G_groupe> article > h3{
+        font-family: "latobold";
+        font-style: normal;
+        font-size: 2.3rem;
+        font-weight: normal;
+        margin:0;
+
+    }
+
+    .G_groupe > article > p {
+        font-family: "latolight";
+        font-style: normal;
+        font-size: 1.4rem;
+        font-weight: normal;
+    }
+
+
+}
+
+
+
+@media screen and (max-width: 960px){
+
+
+    /*---------- titre du groupe au survol---------*/
+
+    .G_content > h2 {
+        color: #ffffff;
+        font-family: "museo700";
+        font-weight: normal;
+        font-style: normal;
+        font-size: 3.3rem;
+        position: absolute;
+        top: 30%;
+        right: -200%;
+        text-align: center;
+        -moz-transition: all .6s;
+        -webkit-transition: all .6s;
+        -o-transition: all .6s;
+        transition: all .6s;
+        width: 70%;
+
+
+
+    }
+
+    .G_content:hover > h2 {
+        color: #ffffff;
+        font-family: "museo700";
+        font-weight: normal;
+        font-style: normal;
+        font-size: 3.3rem;
+        position: absolute;
+        bottom: 15%;
+        padding: 2% 1% 0% 7%;
+        left: 44px;
+        text-align: center;
+        margin-left: -2.5%;
+        -moz-transition: all .6s;
+        -webkit-transition: all .6s;
+        -o-transition: all .6s;
+        transition: all .6s;
+    }
+
+
+    .G_content:hover > h2 {
+        right: 15%;
+        z-index: 10;
+        color: #ffffff;
+
+    }
+
+
+    /*----- section groupe ----*/
+    .G_groupe {
+        display: inline-block;
+        width: 49.8%;
+        overflow: hidden;
+        cursor: pointer;
+        vertical-align: top;
+    }
+
+
+
+    /*----- liste sous-menu principal ----*/
+
+    #G_sous-menu >ul > li {
+        display: block;
+        margin: 0;
+        text-align: left;
+        padding: 20px 30px;
+    }
+
+}
+
+@media screen and (max-width: 753px) and (min-width: 480px ) {
+
+    /*---------- titre du groupe au survol---------*/
+    .G_content:hover > h2 {
+        color: #ffffff;
+        font-family: "museo700";
+        font-weight: normal;
+        font-style: normal;
+        font-size: 6rem;
+        position: absolute;
+        bottom: 15%;
+        padding: 2% 1% 0% 13%;
+        left: 44px;
+        text-align: center;
+        margin-left: -2.5%;
+        -moz-transition: all .6s;
+        -webkit-transition: all .6s;
+        -o-transition: all .6s;
+        transition: all .6s;
+
+    }
+
+    .G_content:hover > h2 {
+        right: 15%;
+        z-index: 10;
+        color: #ffffff;
+
+    }
+
+
+    /*-------- Sous-menu--------------*/
+
+   
+    #G_sous-menu {
+        font-family: 'latolight';
+        font-weight: normal;
+        font-style: normal;
+        font-size: 1.5rem;
+    }
+
+
+
+    /*-----------filtres-------------*/
+    .G_filtres, .A_filtres {
+        font-family: 'latolight';
+        font-weight:  normal;
+        font-style: normal;
+        font-size: 1.5rem;
+      }
+
+    .G_filtres > ul, .A_filtres > ul {
+        padding: 0;
+    }
+
+    .G_filtres > ul > li > a,.A_filtres > ul > li > a {
+        text-decoration: none;
+        display: inline-block;
+        padding: 10px 0;
+        position: relative;
+    }
+
+
+    .G_taillelien {
+        margin-left: -15%;
+    }
+
+
+    /* ------filtre par jour----*/
+
+    .G_jour > ul > li, .A_jour > ul > li {
+        padding-right: 12%;
+        display: table-cell;
+
+    }
+
+    /* ------filtre par groupe----*/
+
+    .G_groupe {
+        display: inline-block;
+        width: 100%;
+        overflow: hidden;
+        cursor: pointer;
+        vertical-align: top;
+    }
+
+}
+
+
+@media screen and (max-width: 480px) {
+
+    /* -------sous-menu-------*/
+
+    
+
+    /*-----------filtres-------------*/
+
+    div.G_filtres > ul, div.A_filtres > ul {
+        margin-left: 0;
+        margin-top: 5%;
+        margin-right: 0;
+        list-style: none;
+        display: table;
+        text-align: left;
+        padding: 0;
+        margin-bottom: 0;
+
+    }
+
+    div.G_filtres > ul > li, div.A_filtres > ul > li {
+      margin:0;
+      padding-left: 0;
+        display: block;
+    }
+
+    div.G_filtres > ul > li > a, div.A_filtres > ul > li > a {
+        margin: 0;
+        display: block;
+    }
+
+
+    a.G_triangle1{
+        height: 0;
+    }
+
+    /*------triangle en hover pour le sous-menu que l'on supprime-----*/
+
+
+    #G_sous_menu li.G_triangle1:after {
+        position: absolute;
+        bottom: -30%;
+        right: 57%;
+        width: 0;
+        height: 0;
+        border-bottom: 0 solid #ffffff;
+        border-right: 0 solid transparent;
+        border-left: 0 solid transparent;
+        content: "";
+        overflow: hidden;
+
+    }
+
+    #G_sous_menu li.G_triangle1:after, li:hover:after {
+        position: absolute;
+        bottom: -29.5%;
+        right: 57%;
+        width: 0;
+        height: 0;
+        border-bottom: 0 solid #ffffff;
+        border-right: 0 solid transparent;
+        border-left: 0 solid transparent;
+        content: "";
+        opacity: 1;
+        transition: opacity .5s ease-out;
+        -moz-transition: opacity .5s ease-out;
+        -webkit-transition: opacity .5s ease-out;
+        -o-transition: opacity .5s ease-out;
+        overflow: hidden
+
+
+    }
+
+
+    /*----- rectangle pour le hover que l'on supprime */
+
+    .G_content .rectangle1 {
+        /*  background: url("../Image/rectanglehover/rect1.jpg");*/
+        width: 0;
+        height: 0;
+        background: 0;
+        position: fixed;
+        /* décalage des deux rectangles*/
+        top: 0;
+        -moz-transition: all .6s;
+        -webkit-transition: all .6s;
+        -o-transition: all .6s;
+        transition: all .6s;
+    }
+
+
+
+    .G_content .rectangle2 {
+        /* background: url("../Image/rectanglehover/rect1.jpg");*/
+        width: 0;
+        height: 0;
+        background: 0;
+        position: fixed;
+        bottom: 0;
+        -moz-transition: all .6s;
+        -webkit-transition: all .6s;
+        -o-transition: all .6s;
+        transition: all .6s;
+    }
+
+
+
+    /* position des rectangles en hover*/
+    .G_content:hover .rectangle1 {
+        top:0;
+    }
+
+
+    .G_groupe {
+        display: inline-block;
+        width: 100%;
+        overflow: hidden;
+        cursor: pointer;
+        vertical-align: top;
+    }
+
+
+    /*----------position du nom du groupe ------*/
+
+    .G_content > h2 {
+        color: #ffffff;
+        font-family: "museo700";
+        font-weight: normal;
+        font-style: normal;
+        font-size: 2.5rem;
+        position: absolute;
+        top: 60%;
+        padding: 5px;
+        left: 0px;
+        text-align: center;
+        margin-left: 0;
+        -moz-transition: all .6s;
+        -webkit-transition: all .6s;
+        -o-transition: all .6s;
+        transition: all .6s;
+    }
+
+     .G_content:hover > h2{
+        font-size: 2.5rem;
+        position: absolute;
+        top: 60%;
+        padding: 5px;
+        left: 0px;
+        text-align: center;
+        margin-left: 15px;
+        height: 45px;
+    }
+
+    .G_groupe> article > h3{
+        font-family: "latobold";
+        font-style: normal;
+        font-size: 2.2rem;
+        font-weight: normal;
+        margin:0;
+
+    }
+
+
+}

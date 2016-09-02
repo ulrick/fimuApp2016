@@ -1,4 +1,21 @@
+
+
+
+
 /* Empty. Add your own CSS if you like */
+@font-face {
+    font-family: myriadPro;
+    src: url(font/Myriad_Pro_Regular.ttf);
+}
+
+html {
+    font-family: myriadPro;
+}
+
+body{
+    font-family : myriadPro;
+}
+
 .center{
     text-align : center;
 }
@@ -15,6 +32,14 @@
     margin-top:44px;
 }
 
+.bg-image{
+	background : url("../img/visuel_fimu_2016.jpg") no-repeat center center fixed;
+	/*background-size: 100% 88%;*/
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+}
+
 .platform-android .bar .title {
     font-size: 19px;
     line-height: 44px;
@@ -22,7 +47,7 @@
 }
 
 .home-programs .list{
-    opacity : .95;
+    opacity : .80;
 }
 
 .item-content p{
@@ -34,6 +59,7 @@
     top: 20%;
     right : -30%;
     font-size: 0.5em;
+    color : #FFF;
 }
 
 .program.heurefin{
@@ -41,32 +67,60 @@
     top: 65%;
     right : -30%;
     font-size: 0.5em;
+    color : #FFF;
 }
 
-.home-programs .item-avatar .item-content > img:first-child{
-    max-width : 60px;
-    max-height : 60px;
+.program.nomartiste{
+    text-transform: uppercase;
+    font-size : .95em;
+    font-weight : bold;
+}
+
+.program.pays{
+    font-size : .8em;
+    font-style : italic;
+    color : #000;
+}
+
+.program.scene{
+    text-transform: uppercase;
+    font-size : .75em;
+    color : #FFF;
+}
+
+.accueil-programs .item-avatar > img:first-child, .home-programs .item-avatar .item-content > img:first-child{
+    max-width : 72px;
+    max-height : 72px;
+    width : 23%;
+    height : 80%;
     margin-top : 1%;
+    margin-left : 2%;
+}
+
+.list.card .item-avatar > img:first-child{
+    max-width : 90px;
+    max-height : 90px;
+    width : 30%;
+    height : 95%;
 }
 
 .event-info{
-   padding-left : 5%;
+   padding-left : 16%;
    width : 100%;
 }
 
+.item.item-avatar .event-info{
+    padding-left : 20%;
+}
 
-#scene1 a.item-content, #scene5 a.item-content{
-    background-color : red;
+.list.card .item.item-avatar{
+    height : 7.5em;
 }
-#scene2 a.item-content{
-    background-color : blue;
+
+.item.item-body{
+    text-align : justify;
 }
-#scene3 a.item-content{
-    background-color : orange;
-}
-#scene4 a.item-content{
-    background-color : yellow;
-}
+
 .scroll-content{
     margin-bottom : 44px;
 }
@@ -102,12 +156,18 @@
 }
 
 .item.item-body.scene-item img{
-    width:100%;
+    width: 100%;
+    max-height: 150px;
 }
 
 .title-image {
+    position: relative;
     height: 44px;
-    border-radius : 10px;
+    border-radius: 10px;
+    left: 0em;
+}
+.platform-android .title-image{
+    left: 2em;
 }
  
 .accueil-content{
@@ -146,8 +206,10 @@
     text-align : center;
 }
 
-.fimu-description h3{
+.fimu-description h4{
     color : #FFF;
+    font-weight:normal;
+    font-size: 14px;
 }
 
 .fimu-description #clockdiv{
@@ -163,6 +225,87 @@
     width: 100%;
     height: 100%;
     z-index: -100;
+}
+
+.heure-accueil{
+    color : #D09B3F;
+    font-size : 14px;
+}
+
+.style-back{
+    position: absolute;
+    left: 6%;
+    transform: skew(-20deg, 0deg);
+    -ms-transform: skew(-20deg, 0deg);
+    -webkit-transform: skew(-20deg, 0deg);
+    display: inline-block;
+    /* padding: 29px; */
+    background-color: #FFF;
+    z-index: -100;
+    height: 100%;
+    top: 0;
+    width: 77px;
+    color : #000;
+    font-size : .95em;
+}
+
+#stylejazz .style-back{
+    background-color: #FFC900;
+}
+
+#styledivers .style-back{
+    background-color: #FFF;
+}
+
+#styleactuelle .ndroidstyle-back{
+    background-color: #387EF5;
+}
+
+#stylemonde .style-back{
+    background-color: #33CD5F;
+}
+
+#styleclassique .style-back{
+    background-color: #886AEA;
+}
+
+#stylenouvelle .style-back{
+    background-color: #EF473A;
+}
+
+
+.item-avatar, .item-avatar .item-content, 
+.item-avatar-left, .item-avatar-left .item-content, 
+.item-thumbnail-left, .item-thumbnail-left .item-content{
+    background: #D09B3F;
+}
+
+
+.list.card .item.item-avatar{
+    background : #04977F;
+}
+
+/*.program.heureHome i{
+    color : #000;
+    font-size: 1.2em;
+}
+
+.icon.icon-heure{
+    color : #000;
+    font-size: 1.2em;
+}*/
+
+.tabs-striped.tabs-positive .tabs, .tabs-positive > .tabs {
+    background : #F8AD08;
+}
+
+.list.card{
+    opacity : .80;
+    margin:0;
+}
+
+.list.card.scene-detail{
+    opacity : 1;
 }
 
 

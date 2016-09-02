@@ -1,26 +1,60 @@
 <ion-side-menus>
 
-    <ion-side-menu-content ng-controller="NavController">
+    <ion-side-menu-content drag-content="true" ng-controller="NavController">
       <ion-nav-bar class="bar-energized nav-title-slide-ios7">
         <ion-nav-back-button class="button-clear">
           <i class="icon ion-ios-arrow-back"></i>
         </ion-nav-back-button>
       </ion-nav-bar>
+      <div notifications="bottom right"></div>
       <ion-nav-view name="fimu" animation="slide-left-right"></ion-nav-view>
       
-      <div class="tabs tabs-icon-only tabs-color-active-positive">
-        <a nav-clear class="tab-item disable-user-behavior active" ng-click="stopVideo()" title="Programmes" icon-on="ion-ios-calendar" icon-off="ion-ios-calendar-outline" nav-clear ui-sref="fimu.home">
+      <!--div class="tabs tabs-icon-only tabs-color-active-positive">
+        <a nav-clear class="tab-item disable-user-behavior" ng-click="stopVideo()" title="Programmes" icon-on="ion-ios-calendar" icon-off="ion-ios-calendar-outline" nav-clear ui-sref="fimu.home">
           <i class="icon ion-ios-calendar"></i><span class="tab-title ng-binding" ng-bind-html="title"></span>
         </a>
         <a nav-clear class="tab-item disable-user-behavior" ng-click="stopVideo()" title="Artistes" icon-on="ion-ios-musical-notes" icon-off="ion-ios-musical-note" ui-sref="fimu.scene">
           <i class="icon ion-ios-musical-note"></i><span class="tab-title ng-binding" ng-bind-html="title"></span>
         </a>
-        <a nav-clear class="tab-item disable-user-behavior" ng-click="stopVideo()" title="Plan" icon-on="ion-ios-location" icon-off="ion-ios-location-outline" ui-sref="fimu.drink">
+        <a nav-clear class="tab-item disable-user-behavior" ng-click="stopVideo()" title="Plan" icon-on="ion-ios-location" icon-off="ion-ios-location-outline" ui-sref="fimu.map">
           <i class="icon ion-ios-location-outline"></i><span class="tab-title ng-binding" ng-bind-html="title"></span>
         </a>
-      </div>
+      </div>-->
+      
+      <ion-tabs class="tabs-positive tabs-icon-top">
+
+        <ion-tab  ui-sref="fimu.accueil" 
+                  title="En Direct" 
+                  icon-on="ion-ios-clock" 
+                  icon-off="ion-ios-clock-outline"
+                  on-select="playVideo()"
+                  on-deselect= "stopVideo()"
+                  >
+        </ion-tab>
+
+        <ion-tab  ui-sref="fimu.home" 
+                  title="Calendrier" 
+                  icon-on="ion-ios-calendar" 
+                  icon-off="ion-ios-calendar-outline">
+        </ion-tab>
+
+        <ion-tab  ui-sref="fimu.scene" 
+                  title="Scènes" 
+                  icon-on="ion-ios-musical-notes" 
+                  icon-off="ion-ios-musical-note">
+        </ion-tab>
+        
+        <ion-tab  ui-sref="fimu.map" 
+                  title="Map" 
+                  icon-on="ion-ios-location" 
+                  icon-off="ion-ios-location-outline">
+        </ion-tab>
+
+      </ion-tabs>
+     
     </ion-side-menu-content>
 
+    <!-- Menu -->
     <ion-side-menu side="right" ng-controller="NavController">
       <ion-header-bar class="bar bar-header bar-assertive">
         <h1 class="title">Menu</h1>
@@ -31,17 +65,69 @@
           <ion-item menu-close ui-sref="fimu.accueil">
             Acceuil
           </ion-item>
-          <ion-toggle  ng-model="settings.enableFriends">
-            Activer spotify
-          </ion-toggle>
-          <ion-toggle>
-            Activer Youtube
-          </ion-toggle>
+          
+          <div class="item item-divider">
+            Codes couleurs genres de musique
+          </div>
+          <li class="item item-toggle">
+            JAZZ
+            <label class="toggle toggle-energized">
+              <input type="checkbox" checked>
+              <div class="track">
+                <div class="handle"></div>
+              </div>
+            </label>
+          </li>
+          <li class="item item-toggle">
+            Musiques actuelles
+            <label class="toggle toggle-positive">
+              <input type="checkbox" checked>
+              <div class="track">
+                <div class="handle"></div>
+              </div>
+            </label>
+          </li>
+          <li class="item item-toggle">
+            Musiques du monde
+            <label class="toggle toggle-balanced">
+              <input type="checkbox" checked>
+              <div class="track">
+                <div class="handle"></div>
+              </div>
+            </label>
+          </li>
+          <li class="item item-toggle">
+            Musiques classiques
+            <label class="toggle toggle-royal">
+              <input type="checkbox" checked>
+              <div class="track">
+                <div class="handle"></div>
+              </div>
+            </label>
+          </li>
+          <li class="item item-toggle">
+            Musiques nouvelles
+            <label class="toggle toggle-assertive">
+              <input type="checkbox" checked>
+              <div class="track">
+                <div class="handle"></div>
+              </div>
+            </label>
+          </li>
+          <li class="item item-toggle">
+            Divers
+            <label class="toggle toggle-light">
+              <input type="checkbox" checked>
+              <div class="track">
+                <div class="handle"></div>
+              </div>
+            </label>
+          </li>
         </ul>
 
       </ion-content>
       <ion-footer-bar class="bar bar-footer">
-        <a class="button button-fullwidth" ui-sref="fimu.policy" ng-click="toggleLeft()">Privacy Policy</a>
+        <a class="button button-fullwidth" ui-sref="fimu.policy" ng-click="toggleLeft()">A Propos</a>
       </ion-footer-bar>
     </ion-side-menu>
 

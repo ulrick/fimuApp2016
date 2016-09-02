@@ -1,0 +1,102 @@
+#submenu,
+#submenu ul,
+#submenu ul li,
+#submenu ul li a,
+#submenu {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style: none;
+  display: block;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#submenu:after,
+#submenu > ul:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  height: 0;
+}
+#submenu {
+  width: auto;
+  padding: 0px 20px;
+  background: #D09B3F;
+}
+#submenu > ul > li {
+  float: left;
+  padding: 20px 24px;
+}
+#submenu.align-center > ul {
+  font-size: 0;
+  text-align: center;
+}
+#submenu.align-center > ul > li {
+  display: inline-block;
+  float: none;
+}
+#submenu.align-right > ul > li {
+  float: right;
+}
+#submenu > ul > li > a {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: left;
+  color: #FFFFFF;
+  -webkit-transition: all .2s ease;
+  -moz-transition: all .2s ease;
+  -ms-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
+}
+#submenu > ul > li > a:hover,
+#submenu > ul > li:hover > a,
+#submenu > ul > li.active > a {
+  color: #FFFFFF;
+}
+#submenu #menu-indicator {
+  position: absolute;
+  bottom: 0;
+  display: block;
+  height: 0;
+  width: 0;
+  border: 15px solid transparent;
+  border-bottom-color: #FFFFFF;
+  -webkit-transition: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  -ms-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+}
+
+/* Small screen */
+#submenu.small-screen {
+  width: 100%;
+}
+#submenu.small-screen > ul,
+#submenu.small-screen.align-center > ul {
+  width: 100%;
+  text-align: left;
+}
+#submenu.small-screen > ul > li,
+#submenu.small-screen.align-center > ul > li {
+  float: none;
+  display: block;
+}
+#submenu.small-screen > ul > li {
+  padding: 5px 40px;
+}
+#submenu.small-screen > ul > li:after,
+#submenu.small-screen > ul > li:before {
+  display: none;
+}
+#submenu.small-screen #menu-indicator {
+  display: none;
+}
+#submenu.small-screen > ul > li.active > a {
+  font-weight: bold;
+}

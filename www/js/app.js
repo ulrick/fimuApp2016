@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('fimu', ['ionic', 'ngResource', 'notifications', 'fimu.controllers', 'fimu.services', 'fimu.factory'])
+angular.module('fimu', ['ionic', 'ngResource', 'notifications','ngMap', 'fimu.controllers', 'fimu.services', 'fimu.factory'])
 
 .run(function($ionicPlatform, $rootScope, EventFactory) {
   $ionicPlatform.ready(function() {
@@ -39,8 +39,8 @@ angular.module('fimu', ['ionic', 'ngResource', 'notifications', 'fimu.controller
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
-
+.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
+	$ionicConfigProvider.tabs.position('bottom');
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router
   // Set up the various states which the app can be in.
@@ -108,12 +108,12 @@ angular.module('fimu', ['ionic', 'ngResource', 'notifications', 'fimu.controller
 		}
 	  }
 	})
-	.state('fimu.drink', {
-		url: '/drink',
+	.state('fimu.map', {
+		url: '/map',
 		views: {
 			'fimu': {
-				templateUrl: 'templates/fimu-setting.html',
-				controller : 'SndDrinkPageController'
+				templateUrl: 'templates/fimu-map.html',
+				controller : 'MapPageController'
 			}
 		}
 	})
@@ -133,6 +133,9 @@ angular.module('fimu', ['ionic', 'ngResource', 'notifications', 'fimu.controller
 				templateUrl: 'templates/accueil.html',
 				controller : 'AccueilPageController'
 			}
+		},
+		onEnter: function($rootScope) {
+				//$rootScope.evenement();
 		}
 	})
 	;
@@ -143,6 +146,14 @@ angular.module('fimu', ['ionic', 'ngResource', 'notifications', 'fimu.controller
 })
 
 .constant('apiUrl', 'http://fimu.shalomaku.fr/api')
-.constant('FestivalDateStart', '2016-05-13')
+.constant('googleMapsUrl', "https://maps.googleapis.com/maps/api/js?key=AIzaSyCPJjYAUvTVhK1bWLi3aUHCO13FRr4FDV4&language=fr&region=FR")
+.constant('festivalDates', {
+	dateStart : '2016-05-13 18:00:00',
+	dateEnd : '2016-05-16'
+})
+/*.constant('jazzStyle', {
+	name : 'Jazz',
+	details : 'Rock, Hip-Hop, Blues, Electro...'
+})*/
 
 ;

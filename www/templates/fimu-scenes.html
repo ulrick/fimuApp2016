@@ -4,15 +4,23 @@
         <button menu-toggle="right" class="button button-icon icon ion-navicon"></button>
       </ion-nav-buttons>
 
-      <ion-content has-header="true" padding="true">
+      <ion-content has-header="true">
 
         <h3 class="center">Les Scènes</h3>
-        <div class="list" type="item-text-wrap">
-            <a class="item item-thumbnail-left" ng-repeat="scene in scenes" href="#/fimu/scene/{{scene.id}}">
-              <img ng-src="{{scene.image_url}}" />
-              <h2>{{scene.name}}</h2>
-              <p>{{scene.description}}</p>
-            </a>
-        </div>
+       
+        <ion-list class="home-programs">
+        <ion-item class="item item-thumbnail-left" ng-repeat="scene in scenes" type="item-text-wrap" href="#/fimu/scene/{{scene.id}}">
+            <img class="program image" ng-src="{{scene.image_url}}" />
+            
+              <div class="scene-info">
+                <h2 class="scene nomartiste">{{scene.name}}</h2>
+                <p class="scene description">{{scene.description}}</p><br/>
+                <p>
+                  <i class="icon ion-ios-eye"> détails...</i>
+                </p>
+                
+            </div>
+          </ion-item>
+         </ion-list>
       </ion-content>
 </ion-view>
